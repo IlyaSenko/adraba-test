@@ -23,7 +23,7 @@ function App() {
   console.log(allCoins)
   const dispatch = useDispatch();
   useEffect(() => {
-    if(allCoins.length) {
+    if (allCoins.length) {
       setCoins(allCoins)
       let tags = [];
       allCoins.forEach(coin => coin.tags.forEach(tag => !tags.includes(tag) && tags.push(tag)))
@@ -50,7 +50,7 @@ function App() {
       searchedCoins = allCoins.filter(coin => coin.name.toLowerCase().includes(searched) ||
       coin.symbol.toLowerCase().includes(searched))
     } else searchedCoins = allCoins;
-    if(value === null) {
+    if (value === null) {
       setCoins(searchedCoins)
     } else setCoins(searchedCoins.filter(coin => coin.tags.includes(value)))
     filter(value);

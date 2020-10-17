@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { List, Card, Space, Button } from 'antd';
 import styles from './index.module.scss';
 
@@ -30,10 +30,10 @@ function CoinList (props) {
   const handleCoinClick = id => {
     let favorites = getFavorites();
     setListData(listData.map(coin => {
-      if(coin.id === id) coin.isFav = !coin.isFav;
+      if (coin.id === id) coin.isFav = !coin.isFav;
       return coin;
     }))
-    if(favorites.includes(id)) {
+    if (favorites.includes(id)) {
       favorites = favorites.filter(_id => _id !== id)
       window.localStorage.setItem(
         'favorites',
