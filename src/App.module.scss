@@ -1,0 +1,16 @@
+.App {
+  header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    input {
+      height: max-content;
+      width: max-content;
+    }
+  }
+
+  &__menu {
+    width: max-content;
+  }
+}

@@ -1,0 +1,12 @@
+.list {
+  padding: 25px !important;
+
+  &__item {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    &__data {
+      margin-left: 25px;
+    }
+  }
+}
