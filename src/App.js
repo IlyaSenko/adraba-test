@@ -5,7 +5,6 @@ import {
   fetchCoinsThunk,
   selectCoins
 } from './redux/slices/coinsSlice';
-import { Counter } from './components/counter/Counter';
 import CoinList from './components/CoinList';
 import 'antd/dist/antd.css'
 import styles from './App.module.scss';
@@ -20,7 +19,6 @@ function App() {
   const [tags, setTags] = useState([])
 
   const allCoins = useSelector(selectCoins);
-  console.log(allCoins)
   const dispatch = useDispatch();
   useEffect(() => {
     if (allCoins.length) {
@@ -58,7 +56,6 @@ function App() {
 
   return (
     <div className={styles.App}>
-      {/*<Counter />*/}
       <header>
         <Menu className={styles.App__menu} onClick={handleClick} selectedKeys={[current]} mode="horizontal">
           <Menu.Item key="all">
@@ -80,7 +77,7 @@ function App() {
           }
         >
           <Option value={null}></Option>
-          {tags.map(tag => <Option value={tag}>{tag}</Option>)}
+          {tags.map((tag, i) => <Option key={i} value={tag}>{tag}</Option>)}
         </Select>
       </header>
       <CoinList data={coins} state={current} />

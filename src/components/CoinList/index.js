@@ -40,7 +40,6 @@ function CoinList (props) {
         JSON.stringify(favorites)
       )
       props.state === 'fave' && setListData(listData.filter(coin => {
-        console.log(coin.id === id)
         return coin.id !== id
       }))
     } else {
@@ -52,9 +51,6 @@ function CoinList (props) {
     <List
       grid={{ gutter: 16, column: 4 }}
       pagination={{
-        onChange: page => {
-          console.log(page);
-        },
         pageSize: 32,
       }}
       className={styles.list}
